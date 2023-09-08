@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "cypress": "^13.1.0"
+  },
+  "name": "orangehrmsdemo",
+  "version": "1.0.0",
+  "description": "This is a test automation suite for OrangeHRMs Demo Site",
+  "main": "index.js",
+  "devDependencies": {
+    "faker": "npm:Faker@^0.7.2",
+    "Faker": "^0.7.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Azeez Lameed (Labsword)",
+  "license": "ISC"
+}
