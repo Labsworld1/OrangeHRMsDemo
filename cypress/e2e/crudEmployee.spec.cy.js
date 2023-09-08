@@ -15,8 +15,14 @@ describe('CRUD Employee', () => {
         employeePage.fillFirstName('Holla')
         employeePage.fillMiddleName('Bola')
         employeePage.fillLastName('Jackson')
+        employeePage.toggleSwitch()
+        employeePage.fillUserName('Labsworld')
+        employeePage.fillPassword('Chin918@')
+        employeePage.fillConfirmPassword('Chin918@')
         employeePage.clickSaveButton()
-        
+        cy.wait(3000)
+        cy.get('.orangehrm-edit-employee-name > .oxd-text').should('have.text', 'Holla Jackson')
+        employeePage.clickPIMBtn()
     })
 
 })

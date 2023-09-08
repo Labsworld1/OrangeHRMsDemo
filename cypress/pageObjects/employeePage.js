@@ -7,8 +7,9 @@ export class EmployeeListPage {
   pimBtn = ':nth-child(2) > .oxd-main-menu-item'
   headerTitleFlex = '.oxd-topbar-header-title'
   saveBtn = '.oxd-button--secondary'
+  pwdField = '.user-password-cell > .oxd-input-group > :nth-child(2) > .oxd-input'
+  confirmPwdField = '.oxd-grid-2 > :nth-child(2) > .oxd-input-group > :nth-child(2) > .oxd-input'
   
-
 
 
     clickPIMBtn() {
@@ -19,6 +20,7 @@ export class EmployeeListPage {
 
     clickAddButton() {
         cy.get(this.addBtn).click();
+        cy.get('h6').should('have.text', 'PIMAdd Employee');
     }
 
 
@@ -46,12 +48,32 @@ export class EmployeeListPage {
         cy.get('.oxd-switch-input').click();
       }
     
-      fillCompanyName(companyName) {
-        cy.get('.oxd-input--focus').click().type(companyName);
+      fillUserName(userName) {
+        cy.get(':nth-child(4) > .oxd-grid-2 > :nth-child(1) > .oxd-input-group > :nth-child(2) > .oxd-input')
+        .should('exist')
+        .should('be.visible')
+        .clear()
+        .type(userName)
+        // Add any additional assertions or actions you need to perform on this element
+
       }
+
+      fillPassword(password) {
+        cy.get(this.pwdField).clear()
+        .type(password)
+      }
+
+    fillConfirmPassword(confirmPwd) {
+        cy.get(this.confirmPwdField).clear()
+        .type(confirmPwd)
+    }
     
       clickSaveButton() {
         cy.get(this.saveBtn).click();
+      }
+
+      assertCreatedEmployee() {
+        
       }
     }
   
